@@ -1,20 +1,19 @@
 import { model } from "./model.js";
-import { templates } from "./templates";
+import { Site } from "./classes/site.js";
 import "./styles/main.css";
 
-const site = document.querySelector("#site");
+const site = new Site("#site");
 
-model.forEach((block) => {
-  const generate = templates[block.type];
+site.render(model);
+/* const generate = templates[block.type];
   if (generate) {
     const html = generate(block);
     site.insertAdjacentHTML("beforeend", html);
-  }
-  /* if (block.type === "title") {
+  } */
+/* if (block.type === "title") {
     html = title(block);
   } else if (block.type === "text") {
     html = text(block);
   } else if (block.type === "textColumns") {
     html = textColumns(block);
   } */
-});
