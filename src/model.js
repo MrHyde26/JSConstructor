@@ -5,11 +5,16 @@ import {
   TextBlock,
   TextColumnsBlock,
 } from "./classes/blocks";
+import { css } from "./utils";
 
 export const model = [
   new TitleBlock("Конструктор сайтов", {
     tag: "h2",
-    styles: "background: #1E90FF; color: #FFA500; text-align: center;",
+    styles: css({
+      background: "#1E90FF",
+      color: "#FFA500",
+      "text-align": "center",
+    }),
   }),
 
   new ImageBlock(image, {
